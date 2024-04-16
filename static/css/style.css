@@ -256,8 +256,8 @@ nav.navigation a.button {
 
 .profile .avatar {
   display: inline-block;
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 
@@ -350,7 +350,7 @@ nav.navigation a.button {
 
 /* single page */
 #single {
-  max-width: 680px;
+  /* max-width: 680px; */
   margin: 60px auto 0 auto;
   padding: 0 64px;
 }

@@ -13,3 +13,7 @@ $RECYCLE.BIN/
 # exampleSite
 exampleSite/themes
 exampleSite/public
+
+.envrc
+shell.nix
+node_modules/
