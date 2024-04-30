@@ -32,3 +32,43 @@
         <script src="{{ $.Site.BaseURL }}{{ . }}"></script>
     {{ end }}
 {{ end }}
+
+{{ if .Params.usePlyr }}
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <script>
+        const player = new Plyr('#player', {
+            controls: [
+                'restart',
+                'rewind',
+                'play',
+                'fast-forward',
+                'progress',
+                'current-time',
+                'mute',
+                'volume',
+                'settings'
+            ],
+            tooltips: {
+                controls: true,
+                seek: true
+            },
+            storage: {
+                enabled: true,
+                key: 'plyr'
+            },
+        });
+        const curTime = localStorage.getItem(document.URL);
+        if (curTime) {
+            document.getElementById('player').currentTime = curTime;
+        }
+        player.on('pause', event => {
+            localStorage.setItem(document.URL, player.currentTime);
+        });
+        player.on('restart', event => {
+            localStorage.removeItem(document.URL);
+        });
+        window.onbeforeunload = function(event) {
+            localStorage.setItem(document.URL, player.currentTime);
+        };
+    </script>
+{{ end }}

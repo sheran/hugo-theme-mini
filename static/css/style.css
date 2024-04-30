@@ -133,8 +133,8 @@ pre code {
 
 nav.navigation {
   padding: 20px 20px 0;
-  background: #fff;
-  background: rgba(255, 255, 255, 0.9);
+  /* background: #fff; */
+  /* background: rgba(255, 255, 255, 0.9); */
   margin: 0 auto;
   text-align: right;
   z-index: 100;
@@ -161,8 +161,8 @@ nav.navigation a.button {
 @media (max-width: 700px) {
   nav.navigation {
     padding: 20px 10px 0 0;
-    background: #fff;
-    background: rgba(255, 255, 255, 0.9);
+    /* background: #fff;
+    background: rgba(255, 255, 255, 0.9); */
     margin: 0 auto;
     text-align: right;
     z-index: 100;
@@ -214,8 +214,8 @@ nav.navigation a.button {
 
 /* footer */
 #footer {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   text-align: center;
   color: #bbbbbb;
   font-size: 14px;
@@ -413,7 +413,7 @@ nav.navigation a.button {
 }
 
 #archive .group {
-  margin: 24px auto; 
+  margin: 0px auto;  /* was 24px */
 }
 #archive .group .key {
   font-size: 20px;
@@ -427,7 +427,7 @@ nav.navigation a.button {
 #archive .group .value .date {
   display: inline-block;
   color: #999;
-  min-width: 60px;
+  min-width: 100px; /* was 60px */
 }
 #archive .group .value .title {
   display: inline;

@@ -21,6 +21,9 @@
 {{ range .Site.Params.customCSS }}
   <link rel="stylesheet" href="{{ . }}">
 {{ end }}
+{{ if .Params.usePlyr }}
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+{{ end }}
 
 <link rel="shortcut icon" href="{{ "/images/favicon.ico" | relURL }}" type="image/x-icon" />
 

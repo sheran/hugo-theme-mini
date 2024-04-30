@@ -1,5 +1,8 @@
 {{ define "main" }}
-{{ partial "profile.html" . }}
+{{ partial "tagheader.html" . }}
+<div class="container mx-auto pt-10 prose">
+    <p>Here's a list of tags. For your convenience. No, please, allow me to save you some time.</p>
+</div>
 <section id="tags">
       {{ $data := .Data }}
       {{ range $key, $value := .Data.Terms.ByCount }}

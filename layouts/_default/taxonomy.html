@@ -1,5 +1,8 @@
 {{ define "main" }}
-{{ partial "profile.html" . }}
+{{ partial "tagheader.html" . }}
+<div class="container mx-auto p-10 prose">
+    <p>Here's a list of articles that are tagged "{{ .Title }}", ordered by year: </p>
+</div>
 
 <section id="archive">
    
@@ -12,20 +15,20 @@
             {{ range .Pages }}
                 <div class="value">
                   <div class="date">
-                      <time datetime="{{ .PublishDate }}">{{ i18n "publishDateShort" . }}</time>
+                      <time datetime="{{ .PublishDate }}">{{ i18n "publishDateYear" . }}</time>
                   </div>
                   <div class="title">
                       <a href="{{ .Permalink }}">
                           {{ .Title }}
                       </a>
 
-                      {{ with .Params.tags }}
+                      <!-- {{ with .Params.tags }}
                           <div class="tags">
                               {{ range . }}
                                   <a href="{{ "tags/" | absURL }}{{ . | urlize }}">{{ . }}</a>
                               {{ end }}
                           </div>
-                      {{ end}}
+                      {{ end}} -->
                   </div>
                 </div>
             {{ end }}          
