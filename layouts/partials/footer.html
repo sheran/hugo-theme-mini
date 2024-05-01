@@ -67,7 +67,11 @@
         player.on('restart', event => {
             localStorage.removeItem(document.URL);
         });
-        window.onbeforeunload = function(event) {
+        // window.onbeforeunload = function(event) {
+        //     localStorage.setItem(document.URL, player.currentTime);
+        // };
+        // iOS doesn't respect onbeforeunload
+        window.onpagehide = function(event) {
             localStorage.setItem(document.URL, player.currentTime);
         };
         
