@@ -2,9 +2,10 @@
 	{{ if not .IsHome }}
 		<a href="{{ "/" | relURL }}"> <span class="arrow">←</span>{{ with .Site.Params.home }}{{ . }}{{ else }}{{ i18n "home" }}{{ end }}</a>
 	{{ end }}
-	<a href="{{ "/about" | relURL }}">{{ with .Site.Params.about }}{{ . }}{{ else }}{{ i18n "about" }}{{ end }}</a>
+	<a href="{{ "/about-sheran" | relURL }}">{{ with .Site.Params.about }}{{ . }}{{ else }}{{ i18n "about" }}{{ end }}</a>
 	<a href="{{ "/blog" | relURL }}">{{ with .Site.Params.blog }}{{ . }}{{ else }}{{ i18n "blog" }}{{ end }}</a>
 	<a href="{{ "/stories" | relURL }}">{{ with .Site.Params.stories }}{{ . }}{{ else }}{{ i18n "stories" }}{{ end }}</a>
+	
 
 	{{ range $element := .Site.Params.Links }}
 		<a href="{{ $element.path }}">{{ $element.name }}</a>
