@@ -57,23 +57,27 @@
                 key: 'plyr'
             },
         });
-        const curTime = localStorage.getItem(document.URL);
-        if (curTime) {
-            document.getElementById('player').currentTime = curTime;
-        }
-        player.on('pause', event => {
-            localStorage.setItem(document.URL, player.currentTime);
-        });
-        player.on('restart', event => {
-            localStorage.removeItem(document.URL);
-        });
-        // window.onbeforeunload = function(event) {
-        //     localStorage.setItem(document.URL, player.currentTime);
-        // };
-        // iOS doesn't respect onbeforeunload
-        window.onpagehide = function(event) {
-            localStorage.setItem(document.URL, player.currentTime);
-        };
+        // if (supports_local_storage()){
+        //     window.onpageshow = function(event) {
+        //         const curTime = localStorage.getItem(document.URL);
+        //             if (curTime) {
+        //                 player.currentTime = curTime;
+        //                 document.getElementById('player').currentTime = curTime;
+        //             }       
+        //             alert(curTime);
+        //     };
+        //     player.on('pause', event => {
+        //         localStorage.setItem(document.URL, player.currentTime);
+        //     });
+        //     player.on('restart', event => {
+        //         localStorage.removeItem(document.URL);
+        //     });
+        //     window.onpagehide = function(event) {
+        //         localStorage.setItem(document.URL, player.currentTime);
+        //     };
+        // } 
+        
+        
         
     </script>
 {{ end }}
