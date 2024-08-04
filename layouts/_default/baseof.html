@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.LanguageCode | default "en" }}">
   <head>
-    <title>{{ block "title" . }}{{ with .Params.Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
-
+    {{ block "title" . }}
+        {{ if isset .Params "title" }}
+            <title>{{ with .Params.Title }}{{ . }} | {{ end }}{{ .Site.Title }}</title>
+        {{ else if .IsHome}}
+            <title>{{ .Site.Title }}</title>
+        {{ else }}
+            <title>{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}</title>
+        {{ end }}
+    {{ end }}
     {{ partial "head.html" . }}
 
   </head>
@@ -13,7 +20,7 @@
     <main class="main">
       {{ block "main" . }}{{ end }}
     </main>
-    
+
     {{ partial "footer.html" . }}
   </body>
 </html>
