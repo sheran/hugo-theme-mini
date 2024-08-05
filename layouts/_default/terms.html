@@ -1,8 +1,12 @@
 {{ define "main" }}
 {{ partial "tagheader.html" . }}
+
+
+{{ if eq .Page.Title "Tags" }}
 <div class="container mx-auto pt-10 prose">
-    <p>Here's a list of tags. For your convenience. No, please, allow me to save you some time.</p>
+    <p>Here's a list of tags for content on this site. Pick one to get a list of articles.</p>
 </div>
+{{ end }}
 <section id="tags">
       {{ $data := .Data }}
       {{ range $key, $value := .Data.Terms.ByCount }}
